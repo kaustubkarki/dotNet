@@ -1,0 +1,38 @@
+﻿@model HomeModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h3>@Model.Name</h3>
+    <h2>@Model.Age</h2>
+    <h1>@Model.Data </h1>
+    <h4>@ViewBag.life</h4>
+
+    <h4>@ViewData["Message"]</h4>
+    <h4>@TempData["order"]</h4>
+    <h4>@ViewBag.demo</h4>
+    <a asp-action="RedirectToAnotherAction">Redirect to Error Page</a><br />
+    <a asp-action="GetJsonData">Get Json Data</a><br />
+    <a asp-action="DownloadFile">Download File</a><br />
+    <a asp-action="PlainText">Plain Text</a><br />
+    <a asp-action="ShowPartial">Partial View</a><br />
+    @Html.Partial("_TestPartial")
+
+    @{
+    var name = "kaustub";
+    }
+    <h1>@name</h1>
+    @if (name=="kaustub")
+    {
+    <h2>Yes it is correct</h2>
+    }
+    @{
+    ViewData["Title"] = "Session Data";
+    } 
+ 
+
+   
+   
+</div>
